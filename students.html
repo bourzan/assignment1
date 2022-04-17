@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-secondary">
+    <div id="container" >
+        <header class="mt-5 p-5 text-center">
+            <h1 class="display-3">Assignment 1 - Forms</h1>
+        </header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link active" href="students.html">Students</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="trainers.html">Trainers</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="assignments.html">Assignments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="courses.html">Courses</a>
+                        </li>
+                  </ul>
+              </div>
+        </nav>
+        <div class="row m-0"> 
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <form action="">
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="stu_fname" name="stu_fname" placeholder="firstname">
+                        <label for="stu_fname">First Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="stu_lname" name="stu_lname" placeholder="lastname">
+                        <label for="stu_lname">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="date" class="form-control" id="stu_dob" name="stu_dob" max="2001-12-31">
+                        <label for="stu_dob">Date of Birth</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="number" class="form-control" id="stu_fees" name="stu_fees" placeholder="500">
+                        <label for="stu_fees">Tuition Fees</label>
+                    </div>
+                    <button id="stu_add" type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <form action="">
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="stu_fname_e" name="stu_fname_e" placeholder="firstname">
+                        <label for="stu_fname_e">First Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="stu_lname_e" name="stu_lname_e" placeholder="lastname">
+                        <label for="stu_lname_e">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="date" class="form-control" id="stu_dob_e" name="stu_dob_e" max="2001-12-31">
+                        <label for="stu_dob_e">Date of Birth</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="number" class="form-control" id="stu_fees_e" name="stu_fees_e" placeholder="500">
+                        <label for="stu_fees_e">Tuition Fees</label>
+                    </div>
+                    <button id="stu_edit" type="submit" class="btn btn-warning disabled">Edit</button>
+                </form>
+            </div>
+        </div> <!-- forms row -->
+        <div class="row m-0">
+            <div class="col-md-3"></div>
+            <div id="error_msg" class="col-md-6 alert text-center"></div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <select class="form-select mb-2 mt-2" id="st_cour">
+                    <option>Java</option>
+                    <option>C#</option>
+                    <option>Python</option>
+                    <option>Assembly</option>
+                  </select>
+                  <button type="button" class="btn btn-primary" id="st_view">View Students</button>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <table class="table table-light table-striped table-hover" id="st_java">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Marios</td>
+                        <td>Azakas</td>
+                      </tr>
+                      <tr>
+                        <td>Giorgos</td>
+                        <td>Poikilidis</td>
+                      </tr>
+                      <tr>
+                        <td>Andreas</td>
+                        <td>Kapetanakis</td>
+                      </tr>
+                      <tr>
+                        <td>Kostas</td>
+                        <td>Arvanitis</td>
+                      </tr>
+                      <tr>
+                        <td>Leonidas</td>
+                        <td>Mitaras</td>
+                      </tr>
+                      <tr>
+                        <td>Foivos</td>
+                        <td>Deliolanis</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <table class="table table-light table-striped table-hover" id="st_c">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Maria</td>
+                        <td>Zampeta</td>
+                      </tr>
+                      <tr>
+                        <td>Xaris</td>
+                        <td>Goulandris</td>
+                      </tr>
+                      <tr>
+                        <td>Vaggelis</td>
+                        <td>Vlaxiotis</td>
+                      </tr>
+                      <tr>
+                        <td>Antonis</td>
+                        <td>Mastratzis</td>
+                      </tr>
+                      <tr>
+                        <td>Trifonas</td>
+                        <td>Garoufakis</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <table class="table table-light table-striped table-hover" id="st_python">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Manolis</td>
+                        <td>Rousakis</td>
+                      </tr>
+                      <tr>
+                        <td>Evgenia</td>
+                        <td>Thalepou</td>
+                      </tr>
+                      <tr>
+                        <td>Xristina</td>
+                        <td>Traparou</td>
+                      </tr>
+                      <tr>
+                        <td>Pantelis</td>
+                        <td>Nestorakis</td>
+                      </tr>
+                      <tr>
+                        <td>Spiros</td>
+                        <td>Vaxoudis</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <table class="table table-light table-striped table-hover" id="st_ass">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Ieroklis</td>
+                        <td>Mpalonakis</td>
+                      </tr>
+                      <tr>
+                        <td>Gertroudi</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Filotas</td>
+                        <td>Rempoutsikas</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <footer class="mt-5 p-5 text-left">
+            <h4">&copy;2022</h4>
+        </footer>
+    </div> <!-- container -->
+    
+    <script>
+         $(document).ready(() => {
+            $('#error_msg').hide()
+            $('input').click(() => $('#error_msg').fadeOut())
+            $('table').hide()
+            
+            $('input').focusin(function() {
+                $(this).css({ "background-color": "white" });
+            })
+            
+             $('#stu_fname').focusout(() => {
+                 if (checkName($('#stu_fname').val())) {
+                     $('#stu_fname').css({ "background-color": "aquamarine" });
+                 } else {
+                     $('#stu_fname').css({ "background-color": "pink" });
+                 }
+             })
+
+             $('#stu_lname').focusout(() => {
+                 if (checkName($('#stu_lname').val())) {
+                     $('#stu_lname').css({ "background-color": "aquamarine" });
+                 } else {
+                     $('#stu_lname').css({ "background-color": "pink" });
+                 }
+             })
+
+             $('#stu_dob').focusout(() => {
+                 d = new Date($('#stu_dob').val())
+                 if (d.getFullYear() < 2002) {
+                     $('#stu_dob').css({ "background-color": "aquamarine" });
+                 } else {
+                     $('#stu_dob').css({ "background-color": "pink" });
+                 }
+             })
+
+             $('#stu_fees').focusout(() => {
+                 if ($('#stu_fees').val() > 0) {
+                     $('#stu_fees').css({ "background-color": "aquamarine" });
+                 } else {
+                     $('#stu_fees').css({ "background-color": "pink" });
+                 }
+             })
+
+             $('#stu_add').click((e) => {
+                 e.preventDefault()
+                 d = new Date($('#stu_dob').val())
+                 if (checkName($('#stu_fname').val()) && checkName($('#stu_lname').val()) &&
+                    d.getFullYear() < 2002 && $('#stu_fees').val() > 0) {
+                     $('#stu_fname_e').val($('#stu_fname').val())
+                     $('#stu_lname_e').val($('#stu_lname').val())
+                     $('#stu_dob_e').val($('#stu_dob').val())
+                     $('#stu_fees_e').val($('#stu_fees').val())
+                     $('#stu_edit').removeClass("disabled")
+                     $('#error_msg').html("Student added successfully. Edit form enabled")
+                     $('#error_msg').removeClass("alert-danger").addClass("alert-success")
+                     $('#error_msg').show()
+                 } else {
+                     $('#error_msg').html("Fill out the form by filling in the required fields properly")
+                     $('#error_msg').removeClass("alert-success").addClass("alert-danger")
+                     $('#error_msg').show()
+                 }
+             })
+
+             $('#stu_edit').click((e) => {
+                 e.preventDefault()
+                 d = new Date($('#stu_dob_e').val())
+                 if (checkName($('#stu_fname_e').val()) && checkName($('#stu_lname_e').val()) &&
+                 d.getFullYear() < 2002 && $('#stu_fees_e').val() > 0) {
+                     $('#error_msg').html("Student entry edited successfully")
+                     $('#error_msg').removeClass("alert-danger").addClass("alert-success")
+                     $('#error_msg').show()
+                } else {
+                     $('#error_msg').html("Fill out the form by filling in the required fields properly")
+                     $('#error_msg').removeClass("alert-success").addClass("alert-danger")
+                     $('#error_msg').show()
+                }
+             })
+
+             function checkName(str) {
+                 var pattern = /^[a-zA-Z]*$/;
+                 var name = str.trim();
+                 return (pattern.test(name) && name !== "")
+             }
+
+            $('#st_view').click(() => {
+                $('#st_java').hide();
+                $('#st_c').hide();
+                $('#st_python').hide();
+                $('#st_ass').hide();
+                if ($('#st_cour').val() == "Java") $('#st_java').show()
+                if ($('#st_cour').val() == "C#") $('#st_c').show()
+                if ($('#st_cour').val() == "Python") $('#st_python').show()
+                if ($('#st_cour').val() == "Assembly") $('#st_ass').show()
+            })
+
+         })
+    </script>
+</body>
+</html>

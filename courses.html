@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-secondary">
+    <div id="container" >
+        <header class="mt-5 p-5 text-center">
+            <h1 class="display-3">Assignment 1 - Forms</h1>
+        </header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="students.html">Students</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="trainers.html">Trainers</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="assignments.html">Assignments</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">Courses</a>
+                    </li>
+                  </ul>
+              </div>
+        </nav>
+        <div class="row m-0"> 
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <form action="">
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="cour_tit" name="cour_tit" placeholder="title">
+                        <label for="cour_tit">Title</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="cour_stre" name="cour_stre" placeholder="stream???">
+                        <label for="cour_stre">Stream</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <select class="form-select" id="cour_type" name="cour_type">
+                          <option>Full-time</option>
+                          <option>Part-time</option>
+                        </select>
+                        <label for="cour_type" class="form-label">Select Type</label>
+                      </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="date" class="form-control" id="cour_ds" name="cour_ds" min="2022-04-01" max="2024-12-31">
+                        <label for="cour_ds">Starting Date</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="date" class="form-control" id="cour_de" name="cour_de" min="2022-04-01" max="2024-12-31">
+                        <label for="cour_de">Ending Date</label>
+                    </div>
+                    <button id="cour_add" type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <form action="">
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="cour_tit_e" name="cour_tit_e" placeholder="title">
+                        <label for="cour_tit_e">Title</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="cour_stre_e" name="cour_stre_e" placeholder="stream???">
+                        <label for="cour_stre_e">Stream</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <select class="form-select" id="cour_type_e" name="cour_type_e">
+                          <option>Full-time</option>
+                          <option>Part-time</option>
+                        </select>
+                        <label for="cour_type_e" class="form-label">Select Type</label>
+                      </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="date" class="form-control" id="cour_ds_e" name="cour_ds_e" min="2022-04-01" max="2024-12-31">
+                        <label for="cour_ds_e">Starting Date</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="date" class="form-control" id="cour_de_e" name="cour_de_e" min="2022-04-01" max="2024-12-31">
+                        <label for="cour_de_e">Ending Date</label>
+                    </div>
+                    <button id="cour_edit" type="submit" class="btn btn-warning disabled">Edit</button>
+                </form>
+            </div> <!-- forms row -->
+            <div class="row m-0">
+                <div class="col-md-3"></div>
+                <div id="error_msg" class="col-md-6 alert text-center"></div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <select class="form-select mb-2 mt-2" id="cour_studs">
+                    <option>Java</option>
+                    <option>C#</option>
+                    <option>Python</option>
+                    <option>Assembly</option>
+                </select>
+                <button type="button" class="btn btn-primary" id="gen_stu">View Students</button>
+                <div id="dyn_stu">
+
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;" id="dyn_ass">
+
+            </div>
+        </div>
+        
+        
+        <footer class="mt-5 p-5 text-left">
+            <h4">&copy;2022</h4>
+        </footer>
+    </div> <!-- container -->
+    <script>
+        $(document).ready(() => {
+            $('#error_msg').hide()
+            $('input').click(() => $('#error_msg').fadeOut());
+
+            $('input').focusin(function() {
+                $(this).css({ "background-color": "white" });
+            })
+
+            $('#cour_tit').focusout(() => {
+                if (checkName($('#cour_tit').val())) {
+                    $('#cour_tit').css({ "background-color": "aquamarine" });
+                } else {
+                    $('#cour_tit').css({ "background-color": "pink" });
+                }
+            })
+
+            $('#cour_stre').focusout(() => {
+                if (checkName($('#cour_stre').val())) {
+                    $('#cour_stre').css({ "background-color": "aquamarine" });
+                } else {
+                    $('#cour_stre').css({ "background-color": "pink" });
+                }
+            })
+
+            $('#cour_add').click((e) => {
+                 e.preventDefault()
+                 if (checkName($('#cour_tit').val()) && checkName($('#cour_stre').val()) &&
+                 $('#cour_ds').val() != "" && $('#cour_de').val() != "") {
+                     $('#cour_tit_e').val($('#cour_tit').val())
+                     $('#cour_stre_e').val($('#cour_stre').val())
+                     $('#cour_type_e').val($('#cour_type').val())
+                     $('#cour_ds_e').val($('#cour_ds').val())
+                     $('#cour_de_e').val($('#cour_de').val())
+                     $('#cour_edit').removeClass("disabled")
+                     $('#error_msg').html("Course added successfully. Edit form enabled")
+                     $('#error_msg').removeClass("alert-danger").addClass("alert-success")
+                     $('#error_msg').show()
+                 } else {
+                     $('#error_msg').html("Fill out the form by filling in the required fields properly")
+                     $('#error_msg').removeClass("alert-success").addClass("alert-danger")
+                     $('#error_msg').show()
+                 } 
+             })
+
+             $('#cour_edit').click((e) => {
+                 e.preventDefault()
+                 if (checkName($('#cour_tit_e').val()) && checkName($('#cour_stre_e').val()) &&
+                 $('#cour_ds_e').val() != "" && $('#cour_de_e').val() != "") {
+                     $('#error_msg').html("Course entry edited successfully")
+                     $('#error_msg').removeClass("alert-danger").addClass("alert-success")
+                     $('#error_msg').show()
+                 } else {
+                     $('#error_msg').html("Fill out the form by filling in the required fields properly")
+                     $('#error_msg').removeClass("alert-success").addClass("alert-danger")
+                     $('#error_msg').show()
+                 } 
+             })
+
+
+            function checkName(str) {
+                 var pattern = /^[a-zA-Z]*$/;
+                 var name = str.trim();
+                 return (pattern.test(name) && name !== "")
+            }
+
+            $('#gen_stu').click(function () {
+                
+                var studs = ["Antonis Mastratzis","Maria Zampeta", "Andreas Kapetanakis", "Xaris Goulandis", "Gertroudi Smith", "Filotas Rempoutsikas"]
+                var select = $('<select>').prop('id', 'studs').prop('name', 'studs')
+                    .prop('class', 'form-select my-2')
+                var butt = $('<button>').prop('type','button').prop('class','btn btn-primary')
+                    .prop('id','gen_ass').text("View Assignment")
+
+                $(studs).each(function() {
+                    select.append($("<option>").prop('value', this).text(this))
+                })
+                
+                $('#dyn_stu').empty()
+                $('#dyn_stu').append(select).append(butt)
+            })
+         
+
+
+        })
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-secondary">
+    <div id="container" >
+        <header class="mt-5 p-5 text-center">
+            <h1 class="display-3">Assignment 1 - Forms</h1>
+        </header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="students.html">Students</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="trainers.html">Trainers</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="assignments.html">Assignments</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Courses</a>
+                      </li>
+                  </ul>
+              </div>
+        </nav>
+        <div class="row m-0"> 
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <form action="">
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="tra_fname" name="tra_fname" placeholder="firstname">
+                        <label for="tra_fname">First Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="tra_lname" name="tra_lname" placeholder="lastname">
+                        <label for="tra_lname">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <select class="form-select" id="tra_cour" name="tra_cour">
+                          <option>Java</option>
+                          <option>C#</option>
+                          <option>Python</option>
+                          <option>Assembly</option>
+                        </select>
+                        <label for="tra_cour" class="form-label">Select Course:</label>
+                      </div>
+                    <button id="tra_add" type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <form action="">
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="tra_fname_e" name="tra_fname_e" placeholder="firstname">
+                        <label for="tra_fname_e">First Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <input type="text" class="form-control" id="tra_lname_e" name="tra_lname_e" placeholder="lastname">
+                        <label for="tra_lname_e">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-2 mt-2">
+                        <select class="form-select" id="tra_cour_e" name="tra_cour_e">
+                          <option>Java</option>
+                          <option>C#</option>
+                          <option>Python</option>
+                          <option>Assembly</option>
+                        </select>
+                        <label for="tra_cour_e" class="form-label">Select Course:</label>
+                      </div>
+                    <button id="tra_edit" type="submit" class="btn btn-warning disabled">Edit</button>
+                </form>
+            </div>
+        </div> <!-- forms row -->
+        <div class="row m-0">
+            <div class="col-md-3"></div>
+            <div id="error_msg" class="col-md-6 alert text-center"></div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <select class="form-select mb-2 mt-2" id="tr_cour">
+                    <option>Java</option>
+                    <option>C#</option>
+                    <option>Python</option>
+                    <option>Assembly</option>
+                  </select>
+                  <button type="button" class="btn btn-primary" id="tr_view">View Trainers</button>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 shadow p-4 m-3" style="background-color:lightslategrey;">
+                <table class="table table-light table-striped table-hover" id="tr_java">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Flavio</td>
+                        <td>Marinero</td>
+                      </tr>
+                      <tr>
+                        <td>George</td>
+                        <td>Pasparakis</td>
+                      </tr>
+                      <tr>
+                        <td>Elena</td>
+                        <td>Kapetanaki</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <table class="table table-light table-striped table-hover" id="tr_c">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Monero</td>
+                        <td>Loukoumesko</td>
+                      </tr>
+                      <tr>
+                        <td>Reno</td>
+                        <td>Voltara</td>
+                      </tr>
+                      <tr>
+                        <td>Huguo</td>
+                        <td>Makarena</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <table class="table table-light table-striped table-hover" id="tr_python">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Kokkalo</td>
+                        <td>Tavlastiero</td>
+                      </tr>
+                      <tr>
+                        <td>Matias</td>
+                        <td>Tsouzi</td>
+                      </tr>
+                      <tr>
+                        <td>Tanevra</td>
+                        <td>Muspazmen</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <table class="table table-light table-striped table-hover" id="tr_ass">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Oute</td>
+                        <td>Kan</td>
+                      </tr>
+                      <tr>
+                        <td>Den</td>
+                        <td>Paizei</td>
+                      </tr>
+                      <tr>
+                        <td>Metin</td>
+                        <td>Kamia</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <footer class="mt-5 p-5 text-left">
+            <h4">&copy;2022</h4>
+        </footer>
+    </div> <!-- container -->
+    <script>
+        $(document).ready(() => {
+           $('#error_msg').hide()
+           $('input').click(() => $('#error_msg').fadeOut());
+           $('table').hide()
+
+           $('input').focusin(function() {
+                $(this).css({ "background-color": "white" });
+            })
+
+            $('#tra_fname').focusout(() => {
+                if (checkName($('#tra_fname').val())) {
+                    $('#tra_fname').css({ "background-color": "aquamarine" });
+                } else {
+                    $('#tra_fname').css({ "background-color": "pink" });
+                }
+            })
+
+            $('#tra_lname').focusout(() => {
+                if (checkName($('#tra_lname').val())) {
+                    $('#tra_lname').css({ "background-color": "aquamarine" });
+                } else {
+                    $('#tra_lname').css({ "background-color": "pink" });
+                }
+            })
+
+            $('#tra_add').click((e) => {
+                 e.preventDefault()
+                 if (checkName($('#tra_fname').val()) && checkName($('#tra_lname').val())) {
+                     $('#tra_fname_e').val($('#tra_fname').val())
+                     $('#tra_lname_e').val($('#tra_lname').val())
+                     $('#tra_cour_e').val($('#tra_cour').val())
+                     $('#tra_edit').removeClass("disabled")
+                     $('#error_msg').html("Trainer added successfully. Edit form enabled")
+                     $('#error_msg').removeClass("alert-danger").addClass("alert-success")
+                     $('#error_msg').show()
+                 } else {
+                     $('#error_msg').html("Fill out the form by filling in the required fields properly")
+                     $('#error_msg').removeClass("alert-success").addClass("alert-danger")
+                     $('#error_msg').show()
+                 }
+             })
+
+            $('#tra_edit').click((e) => {
+                 e.preventDefault()
+                 if (checkName($('#tra_fname_e').val()) && checkName($('#tra_lname_e').val())) {
+                     $('#error_msg').html("Trainer entry edited successfully")
+                     $('#error_msg').removeClass("alert-danger").addClass("alert-success")
+                     $('#error_msg').show()
+                } else {
+                     $('#error_msg').html("Fill out the form by filling in the required fields properly")
+                     $('#error_msg').removeClass("alert-success").addClass("alert-danger")
+                     $('#error_msg').show()
+                }
+            })
+
+            function checkName(str) {
+                 var pattern = /^[a-zA-Z]*$/;
+                 var name = str.trim();
+                 return (pattern.test(name) && name !== "")
+            }
+
+            $('#tr_view').click(() => {
+                $('#tr_java').hide();
+                $('#tr_c').hide();
+                $('#tr_python').hide();
+                $('#tr_ass').hide();
+                if ($('#tr_cour').val() == "Java") $('#tr_java').show()
+                if ($('#tr_cour').val() == "C#") $('#tr_c').show()
+                if ($('#tr_cour').val() == "Python") $('#tr_python').show()
+                if ($('#tr_cour').val() == "Assembly") $('#tr_ass').show()
+
+            })
+
+        })
+    </script>
+</body>
+</html>
